@@ -33,8 +33,7 @@ $conn = mysqli_connect($host, $user, $senha, $database);
 
 <body>
     <?php if ($seguranca) { ?>
-        <h3><?php echo $_SESSION['nome']; ?></h3>
-        <a href="logout.php">sair()</a>
+
         <!-- Navbar -->
         <header class="menu-principal">
             <div class="header-1">
@@ -74,6 +73,10 @@ $conn = mysqli_connect($host, $user, $senha, $database);
                         <li><a href=""><?php echo 'Contact Us'; ?></a></li>
                         <div class="busca">
                             <input placeholder="Search Something" type="text">
+                        </div>
+                        <div class="menu-do-usario">
+                            <?php echo $_SESSION['nome']; ?></h3>
+                            <a href=" logout.php">Logout</a>
                         </div>
                     </ul>
                 </div>
