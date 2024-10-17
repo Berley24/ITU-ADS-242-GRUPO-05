@@ -12,7 +12,7 @@ function login($connect)
     if (isset($_POST['acessar']) and !empty($_POST['email']) and !empty($_POST['senha'])) {
 
         $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-        $senha = ($_POST['senha']);
+        $senha = sha1($_POST['senha']);
         $query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha' ";
         $executar = mysqli_query($connect, $query);
         $return = mysqli_fetch_assoc($executar);
@@ -54,4 +54,48 @@ function busca($connect, $tabela, $where = 1, $order = "")
     $execute = "mysqli_query($connect $query)";
     $results = "mysqli_fetch_all($execute)";
     return $results;
+}
+/*inserir novos usuários */
+function inserirUsuarios($connect)
+{
+    if ((isset($_POST['cadastrar']) && !empty($_POST['email']) && !empty($_POST['senha']))) {
+        $erros = array();
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        $nome = mysqli_real_escape_string($connect, $_POST['nome']);
+        $senha = sha1($_POST['senha']);
+
+        // Verificar se o campo 'repetesenha' está definido
+        if (isset($_POST['repetesenha'])) {
+            if ($_POST['senha'] != $_POST['repetesenha']) {
+                $erros[] = "Senhas não conferem!";
+            }
+        } else {
+            $erros[] = "Campo de confirmação de senha não preenchido!";
+        }
+
+        $queryEmail = "SELECT email FROM usuarios WHERE email = '$email'";
+        $buscaEmail = mysqli_query($connect, $queryEmail);
+        $verifica = mysqli_num_rows($buscaEmail);
+
+        // Verificar se o e-mail já está cadastrado
+        if (!empty($verifica)) {
+            $erros[] = "E-mail já cadastrado!";
+        }
+
+        if (empty($erros)) {
+            $query = "INSERT INTO usuarios (nome, email, senha, data_cadastro) VALUES ('$nome', '$email', '$senha', NOW())";
+            $executar = mysqli_query($connect, $query);
+
+            if ($executar) {
+                echo "Usuário inserido com sucesso.";
+            } else {
+                echo "Erro ao inserir usuário.";
+            }
+        } else {
+            // Exibir os erros
+            foreach ($erros as $erro) {
+                echo "<p>$erro</p>";
+            }
+        }
+    }
 }
