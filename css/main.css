@@ -1,0 +1,263 @@
+/* Configurações básicas */
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Adicionei a fonte padrão */
+}
+
+/* Navbar */
+.menu-principal {
+    width: 100%;
+    background-color: #390000; 
+    color: #fff; 
+}
+.menu-do-usuario {
+    position: absolute; /* Coloca a div em posição absoluta */
+    top: 50px; /* Define a distância do topo da página */
+    right: 30px; /* Define a distância do lado direito da página */
+    background-color: #390000; /* Cor de fundo para diferenciar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.menu-do-usuario span {
+    font-size: 18px;
+    margin-bottom: 10px; /* Espaço entre o nome e o logout */
+}
+
+.menu-do-usuario a {
+    color: #f00;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #f00;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-do-usuario a:hover {
+    background-color: #f00;
+    color: #fff;
+}
+
+.header-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header-1 .logo h2 {
+    margin: 0; 
+}
+
+.redes-sociais ul {
+    display: flex;
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+    margin-left: auto;
+}
+
+.redes-sociais ul li {
+    margin-left: 20px; 
+}
+
+.header-2 {
+    background-color: #390000; 
+    padding: 10px 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu ul li {
+    position: relative;
+    margin: 0 15px; /* Espaçamento entre itens do menu */
+}
+
+.menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.menu ul li:hover > a {
+    border-bottom: 3px solid #00bac6;
+}
+
+/* Submenu */
+.menu ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #140101;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.menu ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu ul li ul {
+    padding: 0; 
+    margin: 0; 
+    list-style: none; 
+}
+
+.menu ul li ul li {
+    width: 200px; 
+}
+
+.menu ul li ul li a {
+    display: block; 
+    padding: 10px;
+    color: #fff;
+    background-color: #140101;
+}
+
+/* Barra de busca */
+.busca input {
+    background-image: url(../img/icone-search.png);
+    background-repeat: no-repeat;
+    background-position: 96%;
+    height: 25px;
+    border: 1px solid #000000; 
+    padding: 5px;
+    border-radius: 5px; 
+}
+
+/* Estilo geral */
+.col-100 {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+/* Carrossel */
+button.slick-prev, button.slick-next {
+    font-size: 0;
+    border: none;
+    width: 25px;
+    height: 51px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+}
+
+button.slick-prev {
+    background-image: url('../img/anterior.png');
+    top: 35%;
+    left: 14%;
+}
+
+button.slick-next {
+    background-image: url('../img/proximo.png');
+    top: 35%;
+    right: 14%;
+}
+
+ul.slick-dots li {
+    font-size: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.slider-list {
+    width: 100% !important;
+}
+
+.slick-dots li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+/* Texto de destaque */
+.texto-destaque {
+    text-align: center;
+}
+
+.texto-destaque h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #818181;
+}
+
+.texto-destaque p {
+    font-size: 15px;
+    color: #9a9a9a;
+}
+
+/* Colunas */
+.col-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 29%;
+    float: left;
+    position: relative;
+}
+
+.bloco-texto {
+    margin-top: 3em;
+}
+
+/* Estilos do slider */
+.slider-principal img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navbar responsiva */
+
+.menu-toggle {
+    display: none; /* Inicialmente escondido */
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde o menu */
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o botão de menu */
+    }
+    
+    .header-1 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .col-3 {
+        width: 100%; /* Colunas ocupam 100% em telas menores */
+    }
+}
+
+.fother {
+    background-color: #000000;
+}
