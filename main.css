@@ -13,14 +13,36 @@ body {
     background-color: #390000; 
     color: #fff; 
 }
-
 .menu-do-usuario {
-    background-position: 96%;
-    height: 36px;
-    border: 1px solid #000000; 
-    padding: 5px;
-    border-radius: 5px; 
+    position: absolute; /* Coloca a div em posição absoluta */
+    top: 50px; /* Define a distância do topo da página */
+    right: 30px; /* Define a distância do lado direito da página */
+    background-color: #390000; /* Cor de fundo para diferenciar */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
+
+.menu-do-usuario span {
+    font-size: 18px;
+    margin-bottom: 10px; /* Espaço entre o nome e o logout */
+}
+
+.menu-do-usuario a {
+    color: #f00;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #f00;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-do-usuario a:hover {
+    background-color: #f00;
+    color: #fff;
+}
+
 .header-1 {
     display: flex;
     justify-content: space-between;
@@ -70,7 +92,7 @@ body {
 .menu ul li a {
     color: #ffffff;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px;
 }
 
 .menu ul li:hover > a {
@@ -116,7 +138,7 @@ body {
     background-image: url(../img/icone-search.png);
     background-repeat: no-repeat;
     background-position: 96%;
-    height: 36px;
+    height: 25px;
     border: 1px solid #000000; 
     padding: 5px;
     border-radius: 5px; 

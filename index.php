@@ -6,20 +6,12 @@ $seguranca = isset($_SESSION['ativa']) ? TRUE : header("location: login.php")
 <?php
 // FAZENDO CONEXÃO COM PHPADMIN
 
-$host = "localhost";
-$user = "root";
-$senha = "";
-$database = "login";
+//$host = "localhost";
+//$user = "root";
+//$senha = "";
+//$database = "login";
 
-$conn = mysqli_connect($host, $user, $senha, $database);
-?>
-<?php
-// Verificar conexão
-//if ($conn->connect_error) {
-//      die("Conexão falhou: " . $conn->connect_error);
-//}
-// echo "Conexão bem-sucedida!";
-// $conn->close();
+//$connect = mysqli_connect($host, $user, $senha, $database);
 ?>
 
 <head>
@@ -44,8 +36,9 @@ $conn = mysqli_connect($host, $user, $senha, $database);
                 <div class="redes-sociais">
                     <ul>
                         <li><a href=""><img src="img/rss.png"></a></li>
+                        <li><a href="https://www.instagram.com/coleira_tec/"><img src="img/application (1).png"></a></li>
                         <li><a href=""><img src="img/face.png"></a></li>
-                        <li><a href=""><img src="img/tw.png"></a></li>
+                        <li><a href="https://x.com/Coleiratec"><img src="img/xx.png"></a></li>
                         <li><a href=""><img src="img/linkedin.png"></a></li>
                     </ul>
                 </div>
@@ -55,28 +48,27 @@ $conn = mysqli_connect($host, $user, $senha, $database);
                 <div class="menu">
                     <ul id="nav-list">
                         <li><a href=""><?php echo 'Home'; ?></a></li>
-                        <li><a href=""><?php echo 'About us'; ?></a></li>
                         <li><a href=""><?php echo 'Service'; ?></a>
                             <ul>
                                 <li><a href="#">Historico</a></li>
                                 <li><a href="#">Definir zona de segurança</a></li>
+                                <li><a href="#">Comprar coleira</a></li>
                             </ul>
                         </li>
                         <li><a href=""><?php echo 'Page'; ?></a>
                             <ul>
                                 <li><a href="#">Registrar um pet</a></li>
                                 <li><a href="#">Os seus pets</a></li>
-                                <li><a href="#">led</a></li>
                             </ul>
                         </li>
                         <li><a href=""><?php echo 'Blog'; ?></a></li>
-                        <li><a href=""><?php echo 'Contact Us'; ?></a></li>
+                        <li><a href="contato.php"><?php echo 'Contato'; ?></a></li>
                         <div class="busca">
-                            <input placeholder="Search Something" type="text">
+                            <input placeholder="Busca" type="text">
                         </div>
-                        <div class="menu-do-usario">
-                            <?php echo $_SESSION['nome']; ?></h3>
-                            <a href=" logout.php">Logout</a>
+                        <div class="menu-do-usuario">
+                            <span><?php echo $_SESSION['nome']; ?></span>
+                            <a href="logout.php">Logout</a>
                         </div>
                     </ul>
                 </div>
@@ -94,7 +86,7 @@ $conn = mysqli_connect($host, $user, $senha, $database);
 
         <div class="col-100">
             <div class="content texto-destaque">
-                <h1><?php echo 'sabe onde está <strong>o seu cachorro</strong> com facilidade.'; ?></h1>
+                <h1><?php echo 'saiba onde está <strong>o seu cachorro</strong> com facilidade.'; ?></h1>
                 <p><?php echo 'Lorem Ipsum is simply dummy text of the printing and typesetting industry...'; ?></p>
 
                 <div class="col-3 bloco-texto">
