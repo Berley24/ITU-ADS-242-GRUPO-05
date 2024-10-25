@@ -22,22 +22,23 @@ if (isset($_POST['cadastrar'])) {
         <h1 class="welcome-text">Bem-vindo ao Coleira Tec.</h1>
 
         <div class="form-container">
-            <form action="" method="post">
+            <form method="post">
                 <fieldset>
-                    <legend>login</legend>
+                    <legend>Entrar</legend>
                     <input type="email" name="email" placeholder="Informe seu E-mail" required></input>
                     <input type="password" name="senha" placeholder="Insira sua senha" required></input>
                     <input type="submit" name="acessar" value="acessar"></input>
                 </fieldset>
             </form>
 
-            <form action="" method="post">
+            <form method="post">
                 <fieldset>
                     <legend>Iniciar Jornada</legend>
                     <input type="text" name="nome" placeholder="nome" required></input>
                     <input type="email" name="email" placeholder="Informe seu E-mail" required></input>
                     <input type="password" name="senha" placeholder="Insira sua senha" required></input>
                     <input type="password" name="repetesenha" placeholder="Comfime sua senha" required></input>
+                    <input type="celular" name="celular" placeholder="celular" required></input>
                     <input type="submit" name="cadastrar" value="cadastrar"></input>
                 </fieldset>
             </form>

@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #390000;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: rgba(110, 107, 107, 0.5); /* Fundo semitransparente para ver o desfoque */
+    backdrop-filter: blur(10px); /* Desfoca o fundo atrás do container */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(233, 6, 6, 0.1);
+    max-width: 600px;
+    width: 100%;
+    
+    transition: transform 0.3s ease;
+}
+
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+strong {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Links */
+a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilizando o formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* Botão de envio */
+.contact-form button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #357ab8;
+    transform: translateY(-3px);
+}
+
+.contact-form button:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    color:#fff
+}
+
+/* Google Maps */
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

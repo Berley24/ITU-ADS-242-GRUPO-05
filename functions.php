@@ -58,11 +58,12 @@ function busca($connect, $tabela, $where = 1, $order = "")
 /*inserir novos usuários */
 function inserirUsuarios($connect)
 {
-    if ((isset($_POST['cadastrar']) && !empty($_POST['email']) && !empty($_POST['senha']))) {
+    if ((isset($_POST['cadastrar']) && !empty($_POST['email']) && !empty($_POST['celular']) && !empty($_POST['senha']))) {
         $erros = array();
         $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
         $nome = mysqli_real_escape_string($connect, $_POST['nome']);
         $senha = sha1($_POST['senha']);
+        $celular = ($_POST['celular']);
 
         // Verificar se o campo 'repetesenha' está definido
         if (isset($_POST['repetesenha'])) {
@@ -83,7 +84,7 @@ function inserirUsuarios($connect)
         }
 
         if (empty($erros)) {
-            $query = "INSERT INTO usuarios (nome, email, senha, data_cadastro) VALUES ('$nome', '$email', '$senha', NOW())";
+            $query = "INSERT INTO usuarios (nome, email, senha, data_cadastro, celular) VALUES ('$nome', '$email', '$senha', NOW(), '$celular' )";
             $executar = mysqli_query($connect, $query);
 
             if ($executar) {
